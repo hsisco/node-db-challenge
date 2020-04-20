@@ -14,7 +14,7 @@ exports.up = function(knex) {
     })
     .createTable("tasks", table => {
       table.increments();
-      table.integer('project_id').unsigned().references('projects.id')
+      table.integer("project_id").unsigned().references("projects.id")
       table.varchar("description", 400).notNullable();
       table.varchar("notes", 400);
       table.boolean("completed").defaultTo(false);
